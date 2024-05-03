@@ -20,7 +20,7 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - uses: shinyinc/actions-aws-cli-vi@1.2
+      - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKER_NAME }}/container/latest
         env:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
